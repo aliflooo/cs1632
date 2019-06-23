@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+	<table>
+		<tr>
+			<% (size.to_i).times do |i| %>
+			<th>
+				<%= (size.to_i - i - 1) %>
+			</th>
+			<% end %>
+			<th>AND</th>
+			<th>OR</th>
+			<th>NAND</th>
+			<th>NOR</th>
+		</tr>
+		<% table.each do |i| %>
+		<tr>
+			<% i.each do |j| %>
+			<% if j %>
+				<td><%= trueSym %></td>
+					<% else %>
+						<td><%= falseSym %></td>
+					<% end %>
+				<% end %>
+        </tr>
+		<% end %>
+	</table><br>
+	<a href="/">Back to main page</a>
+  </body>
+</html>
